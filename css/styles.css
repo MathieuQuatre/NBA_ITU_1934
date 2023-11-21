@@ -1,0 +1,110 @@
+/* styles.css */
+
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f3f3f3; /* Light gray background */
+}
+
+/* Header Styles */
+header {
+    background-color: #333; /* Dark background for the header */
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+h1 {
+    margin: 0;
+}
+
+/* Table Styles */
+.table-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: #fff; /* White background for the table container */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 15px;
+    text-align: center;
+}
+
+th {
+    background-color: #007bff; /* Blue background for table headers */
+    color: #fff;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9; /* Light gray background for even rows */
+}
+
+/* Additional Styles for Table Rows */
+tbody tr:hover {
+    background-color: #e0e0e0; /* Slightly darker gray on hover */
+    transition: background-color 0.3s;
+}
+
+/* Style for the Header of the Table */
+table thead {
+    background-color: #555; /* Darker background for the header row */
+    color: #fff;
+}
+
+/* Style for Links */
+a {
+    color: #007bff; /* Blue color for links */
+}
+
+/* Style for Buttons */
+button {
+    background-color: #28a745; /* Green color for buttons */
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Style for Button on Hover */
+button:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+/* Responsive Design - Adjust Padding */
+@media (max-width: 768px) {
+    th, td {
+        padding: 10px;
+    }
+}
+
+/* NBA Logo Styles */
+.nba-logo {
+    max-width: 100px; /* Adjust the maximum width as needed */
+    margin-right: 10px; /* Add some margin for spacing */
+}
+
+/* Additional Styles for 2023-2024 SAISON STATS Section */
+.season-stats {
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: #fff; /* White background for the section */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+    padding: 20px;
+}
+
+h2.text-center {
+    color: #333; /* Dark color for the heading */
+}
