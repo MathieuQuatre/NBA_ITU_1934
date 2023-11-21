@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     <td>${stat.MPM}</td>
                     <td>${stat.EFF}</td>
                     <td>${stat.FG}</td>
+                    <td>${stat.LF}</td> <!-- Include LF -->
                 `;
             });
         })
