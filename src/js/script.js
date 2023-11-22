@@ -1,10 +1,18 @@
 document.addEventListener('DOMContentLoaded', function () {
     const nbaTableBody = document.querySelector('#nbaTable tbody');
+    Parse.initialize('ZOeEUiWH0Hxdw2dG1pGdOXjZwAY9XjT7KfXIPlkB', 'tLkgSDi93nrRDnSabZFBha0sWgAk0ZBREFwyQ27S');
+    Parse.serverURL = 'https://parseapi.back4app.com';
 
-    // Make a request to the API endpoint
-    fetch('http://localhost:3000/api/nba-stats')
-        .then(response => response.json())
-        .then(data => {
+
+    // Make a request to the Cloud Code function using Parse.Cloud.run
+    Parse.Cloud.run("getNBAStats")
+    .then(response => response.result)  // Access the 'result' property
+    .then(data => {
+        // Log the structure of the data
+        console.log('Received data:', data);
+
+        // Check if data is an array
+        if (Array.isArray(data)) {
             // Process the retrieved data and populate the table
             data.forEach(stat => {
                 const row = nbaTableBody.insertRow();
@@ -20,11 +28,14 @@ document.addEventListener('DOMContentLoaded', function () {
                     <td>${stat.MPM}</td>
                     <td>${stat.EFF}</td>
                     <td>${stat.FG}</td>
-                    <td>${stat.LF}</td> <!-- Include LF -->
+                    <td>${stat.LF}</td> <!-- Add LF column -->
                 `;
             });
-        })
-        .catch(error => {
-            console.error('Error fetching NBA stats:', error);
-        });
+        } else {
+            console.error('Data is not an array:', data);
+        }
+    })
+    .catch(error => {
+        console.error('Error fetching NBA stats:', error);
+    });
 });
